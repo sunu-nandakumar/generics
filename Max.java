@@ -1,46 +1,42 @@
 package com.bridgelabz.generics;
 
 public class Max {
-
-	//calculating Maximum value of Three Numbers using CompareTo method
-			public static int checkMax(Integer a, Integer b, Integer c) {
-				Integer max = a;
-				if(b.compareTo(max) > 0) {
-					max = b; // b is largest now
-				}
-				if(c.compareTo(max) > 0) {
-					max = c; // c is largest now
-				}
-				return max; // returns maximum number
+  // using generic for making the code more streamline
+	
+	public static <T extends Comparable<T>> T checkMax(T x, T y, T z) {
+		T max = x;
+		if(y.compareTo(max) > 0) {
+			max = y; // y is maximum now
+		}
+		if(z.compareTo(max) > 0) {
+			max = z; // z is maximum now
+		}
+		return max; // returns maximum value
+	}
+	
+	public static <T extends Comparable<T>> T checkMax_With_MoreThan_ThreeParameters(T... elements) {
+		T max = elements[0];
+		for(T maxParametereter : elements) {
+			if(maxParametereter.compareTo(max) > 0) {
+				max = maxParametereter;
 			}
-			public static float checkMax(Float d, Float e, Float f) {
-				Float max = d;
-				if(e.compareTo(max) > 0) {
-					max = e; // e is largest now
-				}
-				if(f.compareTo(max) > 0) {
-					max = f; // f is largest
-				}
-				return max; // // returns maximum number
-			}
-			// Calculating maximum value of 3 Strings
-			public static String checkMax(String x, String y, String z) {
-				String max = x;
-				if(y.compareTo(max) > 0) {
-					max = y; //y is maximum value now 
-				}
-				if(z.compareTo(max) > 0) {
-					max = z; // z is maximum value now
-				}
-				return max; // returns maximum value
-			}
+		}
+		return max;
+	}
 			public static void main(String[] args) {
-				int value= checkMax(48,95,35);
-				float result = checkMax(15.4f,12.5f,55.5f);
+				Integer value= checkMax(48,95,35);
+				Double result = checkMax(15.4,12.5,55.5);
 				String cars = checkMax("sonet", "seltos", "nexon");
+				Integer valueForInteger = checkMax_With_MoreThan_ThreeParameters(55,43,85,40,93);
+				Double resultForDouble = checkMax_With_MoreThan_ThreeParameters(19.8, 25.8, 23.0,24.0,50.2);
+				String fruits = checkMax_With_MoreThan_ThreeParameters("Apple", "Peach", "Banana", "Mango", "Orange"); 
+				
 				System.out.println(value);
 				System.out.println(result);
 				System.out.println(cars);
+				System.out.println(valueForInteger);
+				System.out.println(resultForDouble);
+				System.out.println(fruits);
 			}
 
 
