@@ -1,12 +1,13 @@
 package com.bridgelabz.generics;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 
 public class MaxTest {
 
 	Max maximum;
 	 @Before
-	    public void setup() {
+	    public void checkTest() {
 	        maximum = new Max();
 	    }
 	    @org.junit.Test
@@ -28,4 +29,23 @@ public class MaxTest {
 	        Assert.assertEquals(result,maxResult);
 	    }
 	
+	    @Test
+	    public void Given_Max_Float_at_1st_Position_return_the_Same_Float() {
+	        Float maxResult=maximum.checkMax(55.5f,45.5f,35.5f);
+	        Float result=5.5f;
+	        Assert.assertEquals(result,maxResult);
+	    }
+
+	    @Test
+	    public void Given_Max_Float_at_2nd_Position_return_the_Same_Float() {
+	        Float maxResult=maximum.checkMax(45.5f,55.5f,35.5f);
+	        Float result=5.5f;
+	        Assert.assertEquals(result,maxResult);
+	    }
+	    @Test
+	    public void Given_Max_Float_at_3rd_Position_return_the_Same_Float(){
+	        Float maxResult=maximum.checkMax(45.5f,35.5f,55.5f);
+	        Float result=5.5f;
+	        Assert.assertEquals(result,maxResult);
+	    }
 }
