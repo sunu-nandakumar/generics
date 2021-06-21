@@ -32,20 +32,36 @@ public class MaxTest {
 	    @Test
 	    public void Given_Max_Float_at_1st_Position_return_the_Same_Float() {
 	        Float maxResult=maximum.checkMax(55.5f,45.5f,35.5f);
-	        Float result=5.5f;
+	        Float result=55.5f;
 	        Assert.assertEquals(result,maxResult);
 	    }
 
 	    @Test
 	    public void Given_Max_Float_at_2nd_Position_return_the_Same_Float() {
 	        Float maxResult=maximum.checkMax(45.5f,55.5f,35.5f);
-	        Float result=5.5f;
+	        Float result=55.5f;
 	        Assert.assertEquals(result,maxResult);
 	    }
 	    @Test
 	    public void Given_Max_Float_at_3rd_Position_return_the_Same_Float(){
 	        Float maxResult=maximum.checkMax(45.5f,35.5f,55.5f);
-	        Float result=5.5f;
+	        Float result=55.5f;
 	        Assert.assertEquals(result,maxResult);
+	    }
+	    @Test
+	    public void Given_Max_String_at_1st_Position_return_the_Same_String() {
+	        String maximumResult=maximum.checkMax("sonet", "seltos", "nexon");
+	        Assert.assertEquals("sonet",maximumResult);
+	    }
+	    @Test
+	    public void Given_Max_String_at_2nd_Position_return_the_Same_String() {
+	        String maximumResult=maximum.checkMax("sonet", "seltos", "nexon");
+	        Assert.assertEquals("seltos",maximumResult);
+	    }
+
+	    @Test
+	    public void Given_Max_String_at_3rd_Position_return_the_Same_String() {
+	        String maximumResult = maximum.checkMax("sonet", "seltos", "nexon");
+	        Assert.assertEquals("nexon", maximumResult);
 	    }
 }
